@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compotible" content="IE=edge">
+    <title>laba № 3 module 3</title>
+    <link rel="stylesheet" type="text/css" href="css/main13.css">
+</head>
+<body>
+    <div id="play">
+        <button class="button" @click.prevent="start">Начать игру</button><br>
+        <div v-if="visible" class="play">
+
+            <br><input type="text" :value="player1" placeholder="name 1" @keypress.enter="name1" class="input"><br><br>
+            <input type="text" :value="player2" placeholder="name 2" @keypress.enter="name2" class="input">
+            <br><br>
+
+            <div class="war" v-if="item1 !== ''" v-html="item1" @click="boomName1"></div>
+            <div class="war" v-if="item2 !== ''" v-html="item2" @click="boomName2"></div>
+
+
+            <br><br>
+            <div v-for="i in magazine">{{ i }}</div><br>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/script12.js"></script>
+</body>
+</html>
